@@ -73,3 +73,23 @@
         self.eq = False
         self.current = -(float(text_box.get()))
         self.display(self.current)
+
+    sum1 = Calc()
+    root = Tk()
+    calc = Frame(root)
+    calc.grid()
+
+    root.title("Sopf calc MA FAKA")
+    text_box = Entry(calc, justify=Right)
+    text_box.grid(row = 0, column = 0, columnspan = 3, pady = 5)
+    text_box.insert(0, "0")
+
+    numbers = "789456123"
+    i = 0
+    bttn = []
+    for j in range(1,4):
+        for k in range(3):
+            bttn.append(Button(calc, text = numbers[i]))
+            bttn[i].grid(row = j, column = k, pady = 5)
+            bttn[i]["command"] = lambda x = numbers[i]: sum1.num_press(x)
+            i += 1
