@@ -1,2 +1,0 @@
-# PyLearn laina
-Learning Python
