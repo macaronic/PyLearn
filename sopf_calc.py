@@ -11,6 +11,8 @@ class Calc():
         self.op = ""
         self.eq = False
 
+
+
     def num_press(self, num):
         self.eq = False
         temp = text_box.get()
@@ -76,6 +78,19 @@ class Calc():
         self.current = -(float(text_box.get()))
         self.display(self.current)
 
+
+def close():
+    exit()
+window = tkinter.Tk()
+menubar = tkinter.Menu(window)
+
+filemenu = tkinter.Menu(menubar, tearoff= 0)
+filemenu.add_command(label="Close", command=close)
+
+menubar.add_cascade(label = "File", menu=filemenu)
+
+window.config (menu=menubar)
+#window.mainloop()
 
 
 sum1 = Calc()
