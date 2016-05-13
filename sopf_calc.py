@@ -1,6 +1,10 @@
 import tkinter
 #eeq
 
+
+
+#window.mainloop()
+
 class Calc():
     def __init__(self):
 
@@ -79,24 +83,12 @@ class Calc():
         self.display(self.current)
 
 
-def close():
-    exit()
-window = tkinter.Tk()
-menubar = tkinter.Menu(window)
-
-filemenu = tkinter.Menu(menubar, tearoff= 0)
-filemenu.add_command(label="Close", command=close)
-
-menubar.add_cascade(label = "File", menu=filemenu)
-
-window.config (menu=menubar)
-#window.mainloop()
-
 
 sum1 = Calc()
 root = tkinter.Tk()
 calc = tkinter.Frame(root)
 calc.grid()
+window.config (menu=menubar)
 
 root.title("Sopf calc MA FAKA")
 text_box = tkinter.Entry(calc, justify=tkinter.RIGHT)
