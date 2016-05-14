@@ -10,7 +10,6 @@ class Calc():
         self.op = ""
         self.eq = False
 
-
     def num_press(self, num):
         self.eq = False
         temp = text_box.get()
@@ -90,9 +89,9 @@ text_box.insert(0, "0")
 numbers = "789456123"
 i = 0
 bttn = []
-for j in range(1,4):
-    for k in range(3):
-        bttn.append(tkinter.Button(calc, text = numbers[i]))
+for j in range(1, 4):
+       for k in range(3):
+        bttn.append(tkinter.Button(calc, text=numbers[i]))
         bttn[i].grid(row=j, column=k, pady=5)
         bttn[i]["command"] = lambda x=numbers[i]: sum1.num_press(x)
         i += 1
@@ -103,7 +102,7 @@ bttn_0.grid(row=4, column=1, pady=5)
 
 bttn_div = tkinter.Button(calc, text=chr(247))
 bttn_div["command"] = lambda: sum1.operation("divide")
-bttn_div.grid(row=1, column=3, pady=5)
+bttn_div.grid(row=1, column=3, pady=0)
 
 bttn_mult = tkinter.Button(calc, text="x")
 bttn_mult["command"] = lambda: sum1.operation("times")
@@ -121,8 +120,9 @@ neg = tkinter.Button(calc, text="+/-")
 neg["command"] = sum1.sign
 neg.grid(row=5, column=0, pady=5)
 
-##clear["command"] = sum1.calcel
-# clear.grid( row=5, column=1, pady=5 )
+clear = tkinter.Button(calc, text="-")
+clear["command"] = lambda: sum1.operation("minus")
+clear.grid( row=5, column=1, pady=5 )
 
 all_clear = tkinter.Button(calc, text="LAIN")
 all_clear["command"] = sum1.all_cancel
