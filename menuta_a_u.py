@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import Label, StringVar, Entry, Button, Menu, Frame, Tk, Canvas
 import subprocess
-#from tkconstants import LEFT, CENTER,W, SUNKEN , X, Y
+
 
 class SampleApp(tk.Tk):
         def __init__(self, *args, **kwargs):
@@ -22,16 +22,16 @@ class SampleApp(tk.Tk):
             self.show_frame(MainWindow)
 
         def show_frame(self, c):
-            '''Show a frame for the given class'''
+
             frame = self.frames[c]
             frame.tkraise()
 class MainWindow(tk.Frame):
         def __init__(self, parent, controller):
             tk.Frame.__init__(self, parent)
 
-            button = tk.Button(self, text="Connections",compound=LEFT)
+            button = tk.Button(self, text="Connections",compound=tk.LEFT, command =lambda: exit())
             button.pack(pady=50)
-            button1 = tk.Button(self, text="   Locker            ", compound=LEFT,
+            button1 = tk.Button(self, text="   Locker            ", compound=tk.LEFT,
                                     command=lambda: controller.show_frame(Master))
             button1.pack(pady=50)
 
@@ -48,8 +48,6 @@ class Master(tk.Frame):
             menubar.add_cascade(label="File",menu=filemenu)
             controller.configure(menu = menubar)
 if __name__ == "__main__":
-
         app = SampleApp()
         app.title("APPS")
-
         app.mainloop()
